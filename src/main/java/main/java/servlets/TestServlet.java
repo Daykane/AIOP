@@ -6,11 +6,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.Produces;
+import javax.json.Json;
+import javax.json.JsonObject;
+
+
 
 /**
  * Servlet implementation class TestServlet
  */
 @WebServlet("/Test")
+//@Path("/Test")
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,9 +31,39 @@ public class TestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    @Produces("application/json")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setHeader("Cache-Control", "no-cache");
+		
+		String str = 
+		        "{"
+		            + "'Name': 'toto',"
+		            + "'FirstName' : 'Bob',"
+		            + "'email' : 'totoBob@mail.com',"
+		            + "'Roles' : [{"
+		                + "'admin' : 'false',"
+		                + "'member' : 'false',"
+		            + "}]"
+		        + "}";
+		response.getWriter().write(str);
+		/*
+		response.setContentType("application/json");
+		response.setCharacterEncoding("utf-8");
+		//JSONObject json = new JSONObject();
+		String str = 
+			        "{"
+			            + "'Name': 'toto',"
+			            + "'FirstName' : 'Bob',"
+			            + "'email' : 'totoBob@mail.com',"
+			            + "'Roles' : [{"
+			                + "'admin' : 'false',"
+			                + "'member' : 'false',"
+			            + "}]"
+			        + "}";
+		 //new JSONObject(map);
+		response.getWriter().append(str);//append(request.getContextPath());
+		*/
 	}
 
 	/**
