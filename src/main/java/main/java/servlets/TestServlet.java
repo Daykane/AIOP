@@ -7,10 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Produces;
+
+import com.google.gson.Gson;
+
+import main.java.model.User;
+
 import javax.json.Json;
 import javax.json.JsonObject;
-
-
 
 /**
  * Servlet implementation class TestServlet
@@ -36,6 +39,11 @@ public class TestServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setHeader("Cache-Control", "no-cache");
 		
+		User user = new User("password","mail");
+		Gson gson = new Gson();
+		String str = gson.toJson(user);
+		response.getWriter().append(str);
+		/*
 		String str = 
 		        "{"
 		            + "'Name': 'toto',"
@@ -47,6 +55,7 @@ public class TestServlet extends HttpServlet {
 		            + "}]"
 		        + "}";
 		response.getWriter().write(str);
+		*/
 		/*
 		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
