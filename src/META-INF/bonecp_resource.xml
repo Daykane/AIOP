@@ -1,0 +1,25 @@
+<resources><jdbc-connection-pool name="bonecpPool" datasource-classname="com.jolbox.bonecp.BoneCPDataSource" transaction-isolation-level="read-committed" is-isolation-level-guaranteed="true" steady-pool-size="1" max-pool-size="20" res-type="javax.sql.DataSource"><!--jdbc-connection-pool-->
+
+<!--jdbc-connection-pool-->
+<!-- Sets the name of the pool for JMX and thread names. 
+--><property name="poolName" value="BoneCPPool"/><!-- Sets the minimum number of connections that will be contained in every partition.  
+--><property name="driverClass" value="com.mysql.jdbc.Driver"/><property name="minConnectionsPerPartition" value="1"/>
+<property name="maxConnectionsPerPartition" value="20"/>
+<property name="acquireIncrement" value="2"/>
+<property name="partitionCount" value="1"/><!-- Sets the JDBC connection URL. -->
+<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/TESTAIOP"/><!-- Sets username to use for connections. -->
+
+<property name="user" value="root"/><!-- Sets password to use for connections. -->
+<property name="password" value=""/>
+<property name="idleConnectionTestPeriodInMinutes" value="240"/><property name="idleConnectionTestPeriodInSeconds" value="14400"/>
+<property name="idleMaxAgeInSeconds" value="3600"/><property name="connectionTestStatement" value="/* ping *\/ SELECT 1"/>
+<property name="statementsCacheSize" value="0"/><property name="releaseHelperThreads" value="3"/><property name="closeConnectionWatch" value="false"/><!-- If enabled, log SQL statements being executed. -->
+<property name="logStatementsEnabled" value="false"/>
+<property name="acquireRetryDelayInMs" value="7000"/><property name="lazyInit" value="false"/><property name="transactionRecoveryEnabled" value="false"/><property name="acquireRetryAttempts" value="5"/>
+<property name="disableJMX" value="false"/><property name="queryExecuteTimeLimitInMs" value="0"/><property name="poolAvailabilityThreshold" value="20"/>
+<property name="disableConnectionTracking" value="false"/>
+<property name="connectionTimeoutInMs" value="0"/>
+<property name="closeConnectionWatchTimeoutInMs" value="0"/>
+<property name="statementReleaseHelperThreads" value="0"/>
+<property name="maxConnectionAgeInSeconds" value="0"/>
+<property name="statisticsEnabled" value="false"/><property name="externalAuth" value="false"/><property name="deregisterDriverOnClose" value="false"/></jdbc-connection-pool><jdbc-resource enabled="true" jndi-name="bonecp_resource" object-type="user" pool-name="bonecpPool"/></resources>
