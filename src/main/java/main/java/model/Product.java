@@ -46,11 +46,11 @@ public class Product {
 	}
 
 	public String getActivity_name() {
-		return activity_name;
+		return product_name;
 	}
 
 	public void setActivity_name(String activity_name) {
-		this.activity_name = activity_name;
+		this.product_name = activity_name;
 	}
 
 	public String getProduct_description() {
