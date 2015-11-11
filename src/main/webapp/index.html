@@ -7,15 +7,11 @@
         <meta name="description" content="">
         <meta name="google-signin-scope" content="profile email">
         <meta name="google-signin-client_id" content="752635541160-o691j0pko6afpm4knkrkf3kprsj92rnr.apps.googleusercontent.com">
-        <!--==base href="/"/>
-        <!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/-->
-        <!--link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+        <!--==base href="/"/-->
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
-        <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
         
 
     </head>
@@ -23,10 +19,12 @@
         <div class="app" ui-view></div>
 
         <!-- nodes -->
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="node_modules/angular/angular.js"></script>
         <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="node_modules/angular-cookies/angular-cookies.js"></script>
 
-        
         <!-- app -->
         <script src="app.js"></script>
         
@@ -42,9 +40,17 @@
         <!-- services -->
         <script src="services/authentication/authentication.js"></script>
 
-        <!-- views -->
-        <script src="views/root/root.js"></script>
-        <script src="views/root.home/home.js"></script>
+        <!-- states -->
+        <script src="states/root/root.js"></script>
+        <script src="states/root.home/home.js"></script>
+        <script src="states/root.store/store.js"></script>
+        <script src="states/root.my-activities/my-activities.js"></script>
+        <script src="states/root.management/management.js"></script>
+        <script src="states/root.management.products/products.js"></script>
+        <script src="states/root.management.users/users.js"></script>
+        <script src="states/root.management.activities/activities.js"></script>
+        <script src="states/root.management.rooms/rooms.js"></script>
+        <script src="states/root.management.accessories/accessories.js"></script>
 
         <!-- helpers -->
         <script src="helpers/sha1/sha1.js"></script>

@@ -7,20 +7,30 @@
     zenConfig.$inject=["$urlRouterProvider"];
 
     function zenRun($state){
-        $state.go('root.home');
+        $state.go('root.store');
     }
+
     zenRun.$inject=['$state'];
 
-    angular.module('zen.helpers', []);
+    angular.module('zen.helpers', [
+        'sha1'
+    ]);
 
     angular.module('zen.services', [
         'zen.helpers',
     ]);
-    
+
     angular.module('zen', [
         'ui.router',
-        'zen.views.root',
-        'zen.views.home'
+        'zen.states.root',
+        'zen.states.home',
+        'zen.states.store',
+        'zen.states.myActivities',
+        'zen.states.products',
+        'zen.states.users',
+        'zen.states.activities',
+        'zen.states.rooms',
+        'zen.states.accessories',
     ])
     .config(zenConfig)
     .run(zenRun);

@@ -15,20 +15,20 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li><a href="#">Products</a><li>
-	        <li><a href="#">Activities</a></li>
+	        <li><a href="#" data-ng-click="navigation.goToStore()">Store</a><li>
+	        <li><a href="#" data-ng-click="navigation.goToMyActivities()">My Activities</a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage<span class="caret"></span></a>
 	          <ul class="dropdown-menu" data-ng-if="authentication.isAdmin()">
-	            <li><a data-ng-click="navigation.goToManageUsersView()">Users</a></li>
+	            <li><a data-ng-click="navigation.goToUsers()">Users</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToManageActivitiesView()">Activities</a></li>
+	            <li><a data-ng-click="navigation.goToActivities()">Activities</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToManageProductsView()">Products</a></li>
+	            <li><a data-ng-click="navigation.goToProducts()">Products</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToManageRoomsView()">Rooms</a></li>
+	            <li><a data-ng-click="navigation.goToRooms">Rooms</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToManageAccessoriesView()">Accessories</a></li>
+	            <li><a data-ng-click="navigation.goToAccessories()">Accessories</a></li>
 	          </ul>
 	        </li>
 	      </ul>

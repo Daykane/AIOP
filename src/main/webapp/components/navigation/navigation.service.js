@@ -3,7 +3,7 @@
 (function(window, angular, _){
     'use strict';
 
-    function navigationService(){
+    function navigationService($state){
         // Private variables
 
         // Private functions
@@ -11,14 +11,57 @@
 
         function reset(){}
 
+        function goToMyActivities(){
+            $state.go('root.myActivities');
+        }
+
+        function goToStore(){
+            $state.go('root.store');
+            console.log("hello store");
+        }
+
+        function goToBasket(){
+            $state.go('root.basket');
+        }
+
+        function goToUsers(){
+            $state.go('root.management.users');
+        }
+
+        function goToActivities(){
+            $state.go('root.management.activities');
+        }
+
+        function goToProducts(){
+            $state.go('root.management.products');
+        }
+
+        function goToRooms(){
+            $state.go('root.management.rooms');
+        }
+
+        function goToAccessories(){
+            $state.go('root.management.accessories');
+        }
+        
+
         // Public
         return {
             activate: activate,
             reset: reset,
+            goToStore: goToStore,
+            goToMyActivities: goToMyActivities,
+            goToBasket: goToBasket,
+            goToAccessories: goToAccessories,
+            goToUsers: goToUsers,
+            goToProducts: goToProducts,
+            goToRooms: goToRooms,
+            goToActivities: goToActivities
         };
     }
+    navigationService.$inject = ['$state'];
 
     angular.module('zen.components.navigation')
     .factory('navigationService', navigationService);
-    
+
 })(window, window.angular, window._);
