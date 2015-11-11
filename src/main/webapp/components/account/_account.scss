@@ -1,0 +1,91 @@
+#sgAccount {
+    justify-content: flex-end;
+    margin-right: 25px;
+    font-size: .8rem;
+    align-items: center;
+    color: #8d9698;
+    font-weight: 800;
+    overflow: visible;
+
+    .sgAccount--inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        opacity: .8;
+    }
+
+    .stopImpersonate {
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    i {
+        display: inline-block;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .truncate {
+        @include sg-truncate(50px);
+    }
+
+    .sgAccount--name {
+        display: flex;
+        justify-content: center;
+        color: #fff;
+
+        .user {
+            text-align: center;
+            font-weight: 500;
+            margin: 0 5px;
+        }
+    }
+
+    .sgAccount--menu{
+        right: $navigation-width;
+        background-color: $search-bg-color;
+        font-size: .8rem;
+        text-align: left;
+        box-shadow: none;
+
+        .action {
+            display: inline-flex;
+            font-size: .8rem;
+            color: #fff;
+            border: 0;
+
+            i {
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+
+        .actionText {
+            padding-left: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        a{
+            transition: background-color .1s;
+        }
+
+        a:hover{
+            background: #0e88d1;
+        }
+
+        &.is-active {
+            transform: translateX(-62%) translateY(152%);
+        }
+
+    }
+
+    &.realUser {
+        .sgAccount--menu {
+            &.is-active {
+                transform: translateX(-62%) translateY(122%);
+            }
+        }
+    }
+
+}

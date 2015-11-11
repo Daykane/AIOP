@@ -1,35 +1,53 @@
-<!DOCTYPE html PUBLIC "­//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Zen</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="752635541160-o691j0pko6afpm4knkrkf3kprsj92rnr.apps.googleusercontent.com">
+        <!--==base href="/"/>
+        <!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/-->
+        <!--link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
 
-<head>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<title>indexTest</title>
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        
 
-</head>
-	<body>
-<button id="test">click me</button>
-	    
-	   <!-- 
-	   <a> <input type="button" value="Test"> </a>
-	    <a href="Rooms.html" target="_blank"> <input type="button" value="Rooms"> </a>
-	    <a href="TestParameters" target="_blank"> <input type="button" value="Parameters"> </a>
-		-->
-	</body>
+    </head>
+    <body ng-app="zen" ng-strict-di>
+        <div class="app" ui-view></div>
 
-<script type="text/javascript">
-$(function(){
-	  $("#test").click(function(){
-	    $.ajax({
-	    	  method: "GET",
-	    	  url: "Test",
-	    	})
-	    	.done(function(data){
-		    	console.log(data)})
-		    	.fail(function(data){
-			    	alert("fail")});
-	  });
+        <!-- nodes -->
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
-	  
-	});
-</script>
+        
+        <!-- app -->
+        <script src="app.js"></script>
+        
+        <!-- components -->
+        <script src="components/navigation/navigation.js"></script>
+        <script src="components/navigation/navigation.service.js"></script>
+        <script src="components/account/account.js"></script>
+        <script src="components/account/account.service.js"></script>
+
+        <!-- api -->
+        <script src="api/users/users.js"></script>
+
+        <!-- services -->
+        <script src="services/authentication/authentication.js"></script>
+
+        <!-- views -->
+        <script src="views/root/root.js"></script>
+        <script src="views/root.home/home.js"></script>
+
+        <!-- helpers -->
+        <script src="helpers/sha1/sha1.js"></script>
+
+    </body>
 </html>
