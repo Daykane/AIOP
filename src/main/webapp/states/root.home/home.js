@@ -10,20 +10,22 @@
     }
     homeConfig.$inject = ['$stateProvider'];
 
-    function homeRun (){
-    }
+    function homeRun (){}
 
-    function homeController(){
+    function homeController(authenticationService, $scope){
         // Private variables
 
         // Private methods
 
         // Public variables
-
+        $scope.authentication = authenticationService;
         // Public methods
 
         // Initialization
+        authenticationService.activate();
     }
+    homeController.$inject = ['authenticationService', '$scope'];
+
 
     angular.module('zen.states.home', [
         'ui.router',

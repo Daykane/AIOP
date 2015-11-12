@@ -3,7 +3,7 @@
 
     function storeConfig($stateProvider){
         $stateProvider.state('root.store', {
-            url: '/',
+            url: '/store',
             templateUrl: 'states/root.store/store.html',
             controller: 'storeController as storeState'
         });

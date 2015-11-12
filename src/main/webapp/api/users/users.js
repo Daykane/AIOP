@@ -1,3 +1,5 @@
+//MOCK
+
 (function(window, angular, _){
     'use strict';
 
@@ -10,11 +12,31 @@
        function getId(email, password){
             return 1;
        }
+
+       function getUser(id, signature){
+
+            var deferred = $q.defer();
+
+            var user = {
+                userName : 'Toto',
+                userEmail : 'toto@toto.com',
+                userId: 1,
+                isMember : true,
+                isAdmin : true,
+                isContributor : true,
+                isManager : true
+            }
+            deferred.resolve(user);
+            return deferred.promise;
+       }
+
         // Public API
         return {
-            getId: getId
+            getId: getId,
+            getUser: getUser
         };
     }
+    users.$inject = [];
 
     angular.module('zen.api.users', [
             'zen.services'

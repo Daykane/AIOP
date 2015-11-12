@@ -2,24 +2,25 @@
     'use strict';
     
     function loginConfig($stateProvider){
-        $stateProvider.state('login', {
+        $stateProvider.state('root.login', {
             url: '/login',
-            templateUrl: 'views/login/login.html',
-            controller: 'loginController as loginView'
+            templateUrl: 'states/root.login/login.html',
+            controller: 'loginController as loginState'
         });
     }
     loginConfig.$inject = ['$stateProvider'];
 
     function loginRun(){}
 
-    function loginController(UsersService){
+    function loginController(authenticationService, $state){
         // Private variables
         var self = this;
 
         // Private methods
         function loginSuccess(){
-            //$state.go('root.home');
+            $state.go('root.home');
         }
+
         function loginFailure(error){
             if (error.status === 401){
                 self.status = 'invalidCredentials';
@@ -30,37 +31,18 @@
 
         function login(){
             if (self.credentials.email && self.credentials.password){
-                Users.setCurrent(self.credentials.email, self.credentials.password, self.rememberMe).then(loginSuccess, loginFailure);
+                authenticationService.login(self.credentials.email, self.credentials.password, self.rememberMe).then(loginSuccess, loginFailure);
             } else {
                 self.status = 'invalidCredentials';
             }
         }
-		
-		function loginGoogle(googleUser){
-            // Useful data for your client-side scripts:
-            var profile = googleUser.getBasicProfile();
-            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-            console.log("Name: " + profile.getName());
-            console.log("Image URL: " + profile.getImageUrl());
-            console.log("Email: " + profile.getEmail());
-
-            // The ID token you need to pass to your backend:
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log("ID Token: " + id_token);
-		}
-
-        function init(){
-            Users.getCurrent().then(loginSuccess, function(){
-                self.isLogout = true;
-                self.credentials = {
-                    email: '',
-                    password: ''
-                };
-            });
-        }
 
         // Public variables
-        self.credentials = null;
+        self.credentials = {
+            email: "toto@toto.com",
+            password: "toto"
+        }
+
         self.rememberMe = true;
         self.status = 'ok';
         self.isLogout = false;
@@ -69,9 +51,9 @@
         self.login = login;
 
         // Initialization
-        init();
+        authenticationService.activate();
     }
-    loginController.$inject = [];
+    loginController.$inject = ['authenticationService', '$state'];
 
     angular.module('zen.states.login', [
         'zen.services'

@@ -10,10 +10,9 @@
     }
     rootConfig.$inject = ['$stateProvider'];
 	
-	function rootRun(){
-    }
+	function rootRun(){}
 
-    function rootController(){
+    function rootController(authenticationService){
         // Private variables
 
         // Private methods
@@ -23,11 +22,14 @@
         // Public methods
 
         // Initialization
+        authenticationService.activate();
     }
+    rootController.$inject = ['authenticationService'];
 
     angular.module('zen.states.root', [
         'ui.router',
-        'zen.components.navigation',
+        'zen.services',
+        'zen.components.navigation'
     ])
     .config(rootConfig)
 	.run(rootRun)

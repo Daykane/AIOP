@@ -1,22 +1,17 @@
 (function(window, angular, _){
     'use strict';
 
-    function users(){
+    function rooms(){
         // Init
 
         // Private variables
 
         // Private methods
-       function getId(email, password){
-            return 1;
-       }
+
         // Public API
-        return {
-            getId: getId
-        };
     }
 
-    angular.module('zen.api.users', [
+    angular.module('zen.api.rooms', [
             'zen.services'
-        ]).factory('Users', users);
+        ]).factory('Rooms', rooms);
 })(window, window.angular, window._);

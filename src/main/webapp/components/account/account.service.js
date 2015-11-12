@@ -3,7 +3,7 @@
 (function(window, angular){
     'use strict';
 
-    function accountService(authenticationService){
+    function accountService(authenticationService, $state){
         // Private variables
 
         // Private methods
@@ -12,22 +12,24 @@
         function reset(){}
 
         function logout(){
-            authenticationService.reset();
-            $state.go('root.login');
+            authenticationService.clearToken();
+            $state.go('root.home');
+            console.log("home45");
+        }
+        
+        function goToSettings(){
+            $state.go('root.settings');
         }
 
-        function login(){
-            $state.go('root.login');
-        }
-
+        // Public
         return {
             activate: activate,
             reset: reset,
             logout: logout,
-            login: login
+            goToSettings: goToSettings
         };
     }
-    accountService.$inject = ['authenticationService'];
+    accountService.$inject = ['authenticationService', '$state'];
 
     angular.module('zen.components.account')
     .factory('accountService', accountService);

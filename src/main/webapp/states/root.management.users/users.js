@@ -3,7 +3,7 @@
 
     function usersConfig($stateProvider){
         $stateProvider.state('root.management.users', {
-            url: '/users',
+            url: '/management/users',
             templateUrl: 'states/root.management.users/users.html',
             controller: 'usersController as usersState'
         });

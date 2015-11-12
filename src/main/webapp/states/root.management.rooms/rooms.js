@@ -3,7 +3,7 @@
 
     function roomsConfig($stateProvider){
         $stateProvider.state('root.management.rooms', {
-            url: '/rooms',
+            url: '/management/rooms',
             templateUrl: 'states/root.management.rooms/rooms.html',
             controller: 'roomsController as roomsState'
         });

@@ -30,6 +30,7 @@
     accountController.$inject = ['$scope', 'accountService', 'authenticationService'];
 
     angular.module('zen.components.account', [
+        'ui.router',
         'zen.services'
     ])
     .directive('zenAccount', accountDirective);

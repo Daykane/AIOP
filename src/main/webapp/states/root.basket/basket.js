@@ -3,7 +3,7 @@
 
     function basketConfig($stateProvider){
         $stateProvider.state('root.basket', {
-            url: '/',
+            url: '/basket',
             templateUrl: 'states/root.basket/basket.html',
             controller: 'basketController as basketState'
         });

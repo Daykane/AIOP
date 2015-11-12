@@ -3,7 +3,7 @@
 
     function myActivitiesConfig($stateProvider){
         $stateProvider.state('root.myActivities', {
-            url: '/',
+            url: '/my-activities',
             templateUrl: 'states/root.my-activities/my-activities.html',
             controller: 'myActivitiesController as myActivitiesState'
         });

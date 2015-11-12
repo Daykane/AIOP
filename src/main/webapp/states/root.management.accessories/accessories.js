@@ -3,7 +3,7 @@
 
     function accessoriesConfig($stateProvider){
         $stateProvider.state('root.management.accessories', {
-            url: '/accessories',
+            url: '/management/accessories',
             templateUrl: 'states/root.management.accessories/accessories.html',
             controller: 'accessoriesController as accessoriesState'
         });

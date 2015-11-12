@@ -3,7 +3,7 @@
 
     function productsConfig($stateProvider){
         $stateProvider.state('root.management.products', {
-            url: '/products',
+            url: '/management/products',
             templateUrl: 'states/root.management.products/products.html',
             controller: 'productsController as productsState'
         });

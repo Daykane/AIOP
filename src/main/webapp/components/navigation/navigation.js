@@ -22,6 +22,7 @@
 
         // Init
         navigationService.activate();
+        authenticationService.activate();
     }
     navigationController.$inject = ['$scope', 'navigationService', 'authenticationService'];
 
