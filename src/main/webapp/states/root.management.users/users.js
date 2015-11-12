@@ -3,8 +3,8 @@
 
     function usersConfig($stateProvider){
         $stateProvider.state('root.management.users', {
-            url: '/',
-            templateUrl: 'views/root.management.users/users.html',
+            url: '/users',
+            templateUrl: 'states/root.management.users/users.html',
             controller: 'usersController as usersState'
         });
     }
@@ -26,7 +26,9 @@
     }
 
     angular.module('zen.states.users', [
+        'ui.router',
         'zen.states.root',
+        'zen.states.management',
         'zen.services'
     ])
     .config(usersConfig)

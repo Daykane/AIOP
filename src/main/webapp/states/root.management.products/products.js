@@ -3,8 +3,8 @@
 
     function productsConfig($stateProvider){
         $stateProvider.state('root.management.products', {
-            url: '/',
-            templateUrl: 'states/root.managemement.products/products.html',
+            url: '/products',
+            templateUrl: 'states/root.management.products/products.html',
             controller: 'productsController as productsState'
         });
     }
@@ -26,7 +26,9 @@
     }
 
     angular.module('zen.states.products', [
+        'ui.router',
         'zen.states.root',
+        'zen.states.management',
         'zen.services'
     ])
     .config(productsConfig)

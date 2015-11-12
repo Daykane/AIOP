@@ -1,7 +1,7 @@
 (function(window, angular, _){
     'use strict';
 
-    function events(){
+    function products(){
         // Init
 
         // Private variables
@@ -11,7 +11,7 @@
         // Public API
     }
 
-    angular.module('zen.api.events', [
-            'signal.services'
-        ]).factory('Events', events);
+    angular.module('zen.api.products', [
+            'zen.services'
+        ]).factory('Products', products);
 })(window, window.angular, window._);

@@ -3,8 +3,8 @@
 
     function managementConfig($stateProvider){
         $stateProvider.state('root.management', {
-            url: '/',
-            templateUrl: 'views/root.management/management.html',
+            abstract: true,
+            templateUrl: 'states/root.management/management.html',
             controller: 'managementController as managementState'
         });
     }
@@ -26,6 +26,7 @@
     }
 
     angular.module('zen.states.management', [
+        'ui.router',
         'zen.states.root',
         'zen.services'
     ])

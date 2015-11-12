@@ -10,6 +10,10 @@
             return hash(msg);
         }
 
+        function isAdminMock(){
+                return true;
+        }
+
         return {
             setToken: function(email, password, rememberMe){
                 var encryptedPassword = encrypt(password);
@@ -46,7 +50,17 @@
             clearToken: function(){
                 document.execCommand('ClearAuthenticationCache');
                 ipCookie.remove('auth');
+            },
+            isAdmin : function(){
+                return isAdminMock();
+            },
+            isConnected : function(){
+                return isAdminMock();
+            },
+            isNotConnected : function(){
+                return isAdminMock();
             }
+
         };
     }
     authenticationService.$inject = ['$window', 'ipCookie', 'Users', 'sha1']

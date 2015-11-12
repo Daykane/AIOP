@@ -13,11 +13,11 @@
 
         function logout(){
             authenticationService.reset();
-            $state.go('login');
+            $state.go('root.login');
         }
 
         function login(){
-            $state.go('login');
+            $state.go('root.login');
         }
 
         return {

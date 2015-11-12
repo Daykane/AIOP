@@ -2,7 +2,7 @@
     'use strict';
 
     function myActivitiesConfig($stateProvider){
-        $stateProvider.state('root.management.myActivities', {
+        $stateProvider.state('root.myActivities', {
             url: '/',
             templateUrl: 'states/root.my-activities/my-activities.html',
             controller: 'myActivitiesController as myActivitiesState'
@@ -25,6 +25,7 @@
     }
 
     angular.module('zen.states.myActivities', [
+        'ui.router',
         'zen.states.root',
         'zen.services'
     ])

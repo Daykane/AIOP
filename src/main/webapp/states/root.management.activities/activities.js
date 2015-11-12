@@ -3,7 +3,7 @@
 
     function activitiesConfig($stateProvider){
         $stateProvider.state('root.management.activities', {
-            url: '/',
+            url: '/activities',
             templateUrl: 'states/root.management.activities/activities.html',
             controller: 'activitiesController as activitiesState'
         });
@@ -26,7 +26,9 @@
     }
 
     angular.module('zen.states.activities', [
+        'ui.router',
         'zen.states.root',
+        'zen.states.management',
         'zen.services'
     ])
     .config(activitiesConfig)

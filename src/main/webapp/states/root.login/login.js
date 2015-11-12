@@ -10,6 +10,8 @@
     }
     loginConfig.$inject = ['$stateProvider'];
 
+    function loginRun(){}
+
     function loginController(UsersService){
         // Private variables
         var self = this;
@@ -71,9 +73,10 @@
     }
     loginController.$inject = [];
 
-    angular.module('zen.components.login', [
+    angular.module('zen.states.login', [
         'zen.services'
     ])
     .config(loginConfig)
+    .run(loginRun)
     .controller('loginController', loginController);
 })(window, window.angular);

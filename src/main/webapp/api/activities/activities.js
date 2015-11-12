@@ -1,17 +1,17 @@
 (function(window, angular, _){
     'use strict';
 
-    function events(){
+    function activities(){
         // Init
 
         // Private variables
 
         // Private methods
-
+		
         // Public API
     }
 
-    angular.module('zen.api.events', [
-            'signal.services'
-        ]).factory('Events', events);
+    angular.module('zen.api.activities', [
+            'zen.services'
+        ]).factory('Activities', activities);
 })(window, window.angular, window._);

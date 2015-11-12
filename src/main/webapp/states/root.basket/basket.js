@@ -26,6 +26,7 @@
     }
 
     angular.module('zen.states.basket', [
+        'ui.router',
         'zen.states.root',
         'zen.services'
     ])

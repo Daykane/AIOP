@@ -13,7 +13,7 @@
         };
     }
 
-    function accountController($scope){
+    function accountController($scope, accountService, authenticationService){
         // Private variables
 
         // Private methods
@@ -27,7 +27,7 @@
         // Initialization
         accountService.activate();
     }
-    accountController.$inject = ['$scope'];
+    accountController.$inject = ['$scope', 'accountService', 'authenticationService'];
 
     angular.module('zen.components.account', [
         'zen.services'

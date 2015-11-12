@@ -13,7 +13,6 @@
         <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
 
         
-
     </head>
     <body ng-app="zen" ng-strict-di>
         <div class="app" ui-view></div>
@@ -23,7 +22,8 @@
         <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="node_modules/angular/angular.js"></script>
         <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+        <script src="node_modules/angular-cookie/angular-cookie.js"></script>
+        <script src="node_modules/fastclick/lib/fastclick.js"></script>
 
         <!-- app -->
         <script src="app.js"></script>
@@ -43,7 +43,10 @@
         <!-- states -->
         <script src="states/root/root.js"></script>
         <script src="states/root.home/home.js"></script>
+        <script src="states/root.login/login.js"></script>
+        <script src="states/root.settings/settings.js"></script>
         <script src="states/root.store/store.js"></script>
+        <script src="states/root.basket/basket.js"></script>
         <script src="states/root.my-activities/my-activities.js"></script>
         <script src="states/root.management/management.js"></script>
         <script src="states/root.management.products/products.js"></script>

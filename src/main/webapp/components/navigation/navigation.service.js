@@ -13,6 +13,7 @@
 
         function goToMyActivities(){
             $state.go('root.myActivities');
+            console.log("hello my activities");
         }
 
         function goToStore(){
@@ -22,26 +23,32 @@
 
         function goToBasket(){
             $state.go('root.basket');
+            console.log("hello basket");
         }
 
         function goToUsers(){
             $state.go('root.management.users');
+            console.log("hello users");
         }
 
         function goToActivities(){
             $state.go('root.management.activities');
+            console.log("hello activities");
         }
 
         function goToProducts(){
             $state.go('root.management.products');
+            console.log("hello products");
         }
 
         function goToRooms(){
             $state.go('root.management.rooms');
+            console.log("hello rooms");
         }
 
         function goToAccessories(){
             $state.go('root.management.accessories');
+            console.log("hello accessories");
         }
         
 

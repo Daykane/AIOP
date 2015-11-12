@@ -3,8 +3,8 @@
 
     function roomsConfig($stateProvider){
         $stateProvider.state('root.management.rooms', {
-            url: '/',
-            templateUrl: 'states/root.management/rooms/rooms.html',
+            url: '/rooms',
+            templateUrl: 'states/root.management.rooms/rooms.html',
             controller: 'roomsController as roomsState'
         });
     }
@@ -26,7 +26,9 @@
     }
 
     angular.module('zen.states.rooms', [
+        'ui.router',
         'zen.states.root',
+        'zen.states.management',
         'zen.services'
     ])
     .config(roomsConfig)

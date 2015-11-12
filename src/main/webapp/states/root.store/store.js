@@ -10,8 +10,7 @@
     }
     storeConfig.$inject = ['$stateProvider'];
 
-    function storeRun (){
-    }
+    function storeRun (){}
 
     function storeController(){
         // Private variables
@@ -26,6 +25,7 @@
     }
 
     angular.module('zen.states.store', [
+        'ui.router',
         'zen.states.root',
         'zen.services'
     ])

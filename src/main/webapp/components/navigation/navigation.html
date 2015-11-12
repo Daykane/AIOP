@@ -9,37 +9,32 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Dont Worry Be Zen</a>
+	      <a class="navbar-brand" href="#" ui-sref="root.home">Dont Worry Be Zen</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li><a href="#" data-ng-click="navigation.goToStore()">Store</a><li>
-	        <li><a href="#" data-ng-click="navigation.goToMyActivities()">My Activities</a></li>
-	        <li class="dropdown">
+	        <li><a ui-sref="root.store">Store</a><li>
+	        <li><a ui-sref="root.myActivities">My Activities</a></li>
+	        <li class="dropdown" data-ng-if="authentication.isAdmin()">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage<span class="caret"></span></a>
-	          <ul class="dropdown-menu" data-ng-if="authentication.isAdmin()">
-	            <li><a data-ng-click="navigation.goToUsers()">Users</a></li>
+	          <ul class="dropdown-menu">
+	            <li><a class="btn-link" data-ng-click="navigation.goToUsers()">Users</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToActivities()">Activities</a></li>
+	            <li><a class="btn-link" data-ng-click="navigation.goToActivities()">Activities</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToProducts()">Products</a></li>
+	            <li><a class="btn-link" data-ng-click="navigation.goToProducts()">Products</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToRooms">Rooms</a></li>
+	            <li><a class="btn-link" data-ng-click="navigation.goToRooms()">Rooms</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a data-ng-click="navigation.goToAccessories()">Accessories</a></li>
+	            <li><a class="btn-link" data-ng-click="navigation.goToAccessories()">Accessories</a></li>
 	          </ul>
 	        </li>
 	      </ul>
-	      <form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
-	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
-	      </form>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Basket</a></li>
+	        <li><a href="#" ui-sref="root.basket">Basket</a></li>
+	        <zen-account><zen-account>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->

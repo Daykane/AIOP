@@ -3,8 +3,8 @@
 
     function accessoriesConfig($stateProvider){
         $stateProvider.state('root.management.accessories', {
-            url: '/',
-            templateUrl: 'states/root.accessories/accessories.html',
+            url: '/accessories',
+            templateUrl: 'states/root.management.accessories/accessories.html',
             controller: 'accessoriesController as accessoriesState'
         });
     }
@@ -26,7 +26,9 @@
     }
 
     angular.module('zen.states.accessories', [
+        'ui.router',
         'zen.states.root',
+        'zen.states.management',
         'zen.services'
     ])
     .config(accessoriesConfig)
